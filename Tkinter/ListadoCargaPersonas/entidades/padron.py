@@ -22,3 +22,6 @@ class Padron():
     
     def agregar(self, persona: Persona):
         self.personas[persona.documento] = persona
+
+    def eliminarPorDocumento(self, documento: int):
+        del self.personas[documento]
