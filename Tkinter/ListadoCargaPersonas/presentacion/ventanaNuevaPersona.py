@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter.messagebox import *
-from persona import Persona
+from entidades import Persona
 
 class VentanaNuevaPersona():
     def __init__(self):
@@ -21,17 +21,14 @@ class VentanaNuevaPersona():
         frameEntrys.pack()
 
         frameBotones = Frame(self.ventana, padx=10, pady=8)
-        Button(frameBotones, text="Aceptar", command=self.aceptar, padx=2).grid(row=4, column=0, padx=10)        
+        Button(frameBotones, text="Agregar", command=self.aceptar, padx=2).grid(row=4, column=0, padx=10)        
         Button(frameBotones, text="Cancelar", command=self.ventana.destroy, padx=2).grid(row=4, column=1, padx=10)
         frameBotones.pack(side=TOP)
 
     def mostrar(self):
         self.ventana.mainloop()
 
-    def aceptar(self):
+    def aceptar(self, ventanaListado):
         persona = Persona(self.nombre, self.apellido, self.documento. self.edad)
         return persona # Agregar aca al padron
 
-
-ventana = VentanaNuevaPersona()
-ventana.mostrar()

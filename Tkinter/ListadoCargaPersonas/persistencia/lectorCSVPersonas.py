@@ -1,4 +1,4 @@
-from persona import Persona
+from entidades import Persona
 
 class lectorCSVPersonas():
     def __init__(self, ruta):
@@ -10,7 +10,7 @@ class lectorCSVPersonas():
         personas = dict()
         for linea in archivo.readlines():
             linea = linea.strip().split(",")
-            persona = Persona(linea[1], linea[2], linea[0], int(linea[3]))
+            persona = Persona(linea[1], linea[2], int(linea[0]), int(linea[3]))
             personas[persona.documento] = persona
         
         archivo.close()
